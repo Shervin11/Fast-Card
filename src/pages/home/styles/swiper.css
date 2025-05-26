@@ -1,0 +1,48 @@
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 892px;
+  height: 344px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sw {
+  width: 1200px;
+  height: 350px;
+}
+
+.ws {
+  width: 1200px;
+  height: 150px;
+}
+
+.dd img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    width: 100%;
+  }
+}

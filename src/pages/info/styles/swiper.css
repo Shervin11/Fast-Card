@@ -1,0 +1,25 @@
+.swiper-slide {
+    align-items: center !important;
+    justify-content: start !important;
+    background-color: transparent !important;
+}
+
+.mywiper {
+    height: 20%;    
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mywiper .swiper-slide {
+    width: 15%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mywiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.as {
+    height: 200px !important;
+}
