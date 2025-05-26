@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "../../features/components/ui/input";
-import { getCart } from "../../entities/store/reducers/tableSlice";
+import { clearCart, getCart } from "../../entities/store/reducers/tableSlice";
 import { useDispatch, useSelector } from "react-redux";
 import bank from "@/shared/images/bank.png";
 import { Button } from "../../features/components/ui/button";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 let API = import.meta.env.VITE_API_URL;
 
 const Check = () => {
-  let data = useSelector((state) => state.table.dataOfCart);
-  let dispatch = useDispatch();
-  let [arr, setArr] = useState([]);
+  const data = useSelector((state) => state.table.dataOfCart);
+  const dispatch = useDispatch();
+  const [arr, setArr] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     setArr(data.productsInCart);
@@ -20,6 +23,12 @@ const Check = () => {
     setArr(data.productsInCart);
     dispatch(getCart());
   }, []);
+
+  function Buy() {
+    navigate('/')
+    toast.success('Successfuly buy products')
+    dispatch(clearCart())
+  }
 
   return (
     <>
@@ -140,7 +149,7 @@ const Check = () => {
               Apply
             </Button>
           </article>
-          <Button className="w-[190px] h-[56px] bg-[#DB4444] text-[18px]">
+          <Button onClick={Buy} className="w-[190px] h-[56px] bg-[#DB4444] text-[18px]">
             Place Order
           </Button>
         </article>
