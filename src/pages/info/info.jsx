@@ -20,6 +20,7 @@ import { Button } from "../../features/components/ui/button";
 import delivery from "@/shared/images/icon-delivery.png";
 import raiting from "@/shared/images/raiting.png";
 import ret from "@/shared/images/Icon-return.png";
+import toast from "react-hot-toast";
 
 let API = import.meta.env.VITE_API_URL;
 
